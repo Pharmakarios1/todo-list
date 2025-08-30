@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List App</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+  </head>
+  <body>
+    <div class="todo-container">
+      <div class="todo-header">
+        <h2>Todo List App</h2>
+        <div class="settings">
+          <button onclick="toggleSettings()">⚙️ Settings</button>
+        </div>
+      </div>
+
+      <div id="settingsModal" class="settings-modal" style="display: none">
+        <div class="settings-content">
+          <h2>Theme</h2>
+          <div>
+            <!-- <button onclick="setTheme('light')">Light Theme</button>
+            <button onclick="setTheme('dark')">Dark Theme</button> -->
+            <button onclick="showColorPickerModal()">Customize Theme</button>
+            <button onclick="toggleSettings()">Close</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Color Picker Modal -->
+      <div
+        id="colorPickerModal"
+        class="color-picker-modal"
+        style="display: none"
+      >
+        <div class="color-picker-content">
+          <h2>Select Custom Colors</h2>
+          <label for="bgColor">Background Color:</label>
+          <input type="color" id="bgColor" value="#f4f4f4" />
+          <br /><br />
+          <label for="textColor">Text Color:</label>
+          <input type="color" id="textColor" value="#000000" />
+          <br /><br />
+          <button onclick="applyCustomColors()">Apply</button>
+          <button onclick="toggleColorPickerModal()">Close</button>
+        </div>
+      </div>
+
+      <input type="text" id="todoInput" placeholder="Enter new task" />
+      <button class="btn-input" onclick="addTodo()">Add Todo</button>
+      <ul id="todoList" class="todo-list"></ul>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
